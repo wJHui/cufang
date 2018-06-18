@@ -12,9 +12,9 @@ export default {
 
 <style lang="scss">
 	html, body {
-		padding: 0; margin: 0; box-sizing: border-box; font-size: 14px;
+		padding: 0; margin: 0; font-size: 14px;
 	}
-	body{ padding: 50px 0; }
+	body{ padding: 50px 0;}
 
 	.clear{
 		&:after {

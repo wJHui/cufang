@@ -13,7 +13,8 @@
 </script>
 
 <style lang="scss">
-	#header, #footer{ height: 50px; width: 100vw; background: #f7f7f7; position: relative; z-index: 20; position: fixed; left: 0; z-index: 50; }
+	#header, #footer{ height: 50px; width: 100%; background: #ccc; position: relative; z-index: 20; position: fixed; left: 0; z-index: 50; }
 	#header{ top: 0; }
 	#footer{ bottom: 0; }
+
 </style>

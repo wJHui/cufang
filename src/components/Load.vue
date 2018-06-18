@@ -57,29 +57,24 @@
 					
 					switch(true){
 						case newVlue >= 100 :
-							//load.style.transform = 'matrix(1, 0, 0 ,1 , 0, 100)';
 							tl.to(load, 0, {y : 100, ease : Linear.easeOut});
 							newVlue = 100;
 						break;
 						case newVlue <= 0 :
-							//load.style.transform = 'matrix(1, 0, 0 ,1 , 0, 0)';
 							tl.to(load, 0, {y : 0, ease : Linear.easeOut});
 							newVlue = 0;
-
 							_slef.scrollState = 0
 						break;
 						default :
-							//load.style.transform = 'matrix(1, 0, 0, 1, 0, '+ newVlue +')';
 							tl.to(load, 0, {y : newVlue, ease : Linear.easeOut});
 					}
 
 					if(newVlue >= 80){
 						 _slef.scrollState = 2 					// 满足刷新条件
-					}else{
-						_slef.scrollState = 1;
 					}
 					
 					_slef.initY = e.targetTouches[0].clientY;	// 记录当前触摸位置
+					console.log(_slef.scrollState)
 
 				}
 
