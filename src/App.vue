@@ -11,10 +11,11 @@ export default {
 </script>
 
 <style lang="scss">
-	html, body {
-		padding: 0; margin: 0; font-size: 14px;
-	}
-	body{ padding: 50px 0;}
+	@import './assets/fonts/iconfont.css';
+
+	*{ box-sizing: border-box; padding: 0; margin: 0; font-family: 'Microsoft Yahei'; }
+	
+	body{ padding: 50px 0; font-size: 14px;}
 
 	.clear{
 		&:after {
@@ -38,5 +39,11 @@ export default {
 		&center{
 			text-align: center;
 		}
+	}
+
+	.flex{
+		display: flex;
+		justify-content: center;
+		align-items: center
 	}
 </style>

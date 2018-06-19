@@ -74,7 +74,7 @@
 					}
 					
 					_slef.initY = e.targetTouches[0].clientY;	// 记录当前触摸位置
-					console.log(_slef.scrollState)
+					//console.log(_slef.scrollState)
 
 				}
 
@@ -124,11 +124,11 @@
 
 	
 	#load{ 
-		transform: matrix(1,0,0,1,0,0); position: absolute; top: 0px; left: 0; width: 100%; 
+		transform: matrix(1,0,0,1,0,0); position: absolute; top: -50px; left: 0; width: 100%; 
 
 		.loadWrap{ 
 			display: inline-block; 
-			margin: 16px 0 4px; 
+			margin: 10px 0 4px; 
 			padding: 6px; 
 			background: rgba(255,255,255,.8); 
 			border-radius: 50%; 
@@ -143,8 +143,8 @@
 				animation: 1s loader linear infinite;
 				position: relative;
 				/*display: inline-block;*/
-			    width: 16px;
-			    height: 16px;
+			    width: 24px;
+			    height: 24px;
 			    color: inherit;
 			    vertical-align: middle;
 			    pointer-events: none;
