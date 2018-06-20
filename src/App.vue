@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+  	<router-view></router-view>
   </div>
 </template>
 
@@ -13,9 +13,11 @@ export default {
 <style lang="scss">
 	@import './assets/fonts/iconfont.css';
 
+	
+
 	*{ box-sizing: border-box; padding: 0; margin: 0; font-family: 'Microsoft Yahei'; }
 	
-	body{ padding: 50px 0; font-size: 14px;}
+	body{/* padding: 50px 0;*/ font-size: 14px;}
 
 	.clear{
 		&:after {

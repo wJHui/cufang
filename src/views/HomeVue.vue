@@ -1,35 +1,41 @@
 <template>
-	<div id="content">
-		<loadComponent @refresh="onRefresh" :isupdate="isupdate"></loadComponent>
-		<section id="nav" class="flex">
-			<div v-for="(list, index) in navData" class="navItem" :key="index">
-				<img :src="list.icon">
-				<p>{{list.title}}</p>
-			</div>
-		</section>
-		<section class="clear" style="margin:0 0 16px 0;">
-			<imgListsComponent v-for="(list, index) in imglists1" :key="index" :data="list" :shownum=2 :isfirst='index === 0'></imgListsComponent>
-		</section>
-
-		<Swiper :data="swiper"></Swiper>
-		<parallaxComponent :data="meals"></parallaxComponent>
-
-		<section id="join">
-			<h3>现在加入 \ 下厨房会员 /</h3>
-			<div class="clear">
-				<div class="pull-left join-text">
-					<p>免费看</p>
-					<h5>100本美食好书</h5>
+	<div>
+		<headvue :data="top"></headvue>
+		<div id="main">
+			<loadComponent @refresh="onRefresh" ref='load' :isupdate="isupdate"></loadComponent>
+			<section id="nav" class="flex">
+				<div v-for="(list, index) in navData" class="navItem" :key="index">
+					<img :src="list.icon">
+					<p>{{list.title}}</p>
 				</div>
-				<div class="pull-right join-btn">
-					立刻拥有
-				</div>
-			</div>
-		</section>
+			</section>
+			<section class="clear" style="margin:0 0 16px 0;">
+				<imgListsComponent v-for="(list, index) in imglists1" :key="index" :data="list" :shownum=2 :isfirst='index === 0'></imgListsComponent>
+			</section>
 
-		<seriesComponent :data="series" :num=2></seriesComponent>
-		<seriesComponent :data="series" :num=2></seriesComponent>
-		<seriesComponent :data="series" :num=2></seriesComponent>
+			<Swiper :data="swiper"></Swiper>
+			<parallaxComponent :data="meals"></parallaxComponent>
+
+			<section id="join">
+				<h3>现在加入 \ 下厨房会员 /</h3>
+				<div class="clear">
+					<div class="pull-left join-text">
+						<p>免费看</p>
+						<h5>100本美食好书</h5>
+					</div>
+					<div class="pull-right join-btn">
+						立刻拥有
+					</div>
+				</div>
+			</section>
+
+			<seriesComponent :data="series" :num=2></seriesComponent>
+			<seriesComponent :data="series" :num=2></seriesComponent>
+			<seriesComponent :data="series" :num=2></seriesComponent>
+
+			<div class="more"><span class="moreTips">已经到底了</span></div>
+		</div>
+		<footvue></footvue>
 	</div>
 </template>
 
@@ -40,6 +46,8 @@
 	import imgListsComponent from '../components/Imglists'
 	import parallaxComponent from '../components/parallax'
 	import seriesComponent from '../components/series'
+	import headvue from '../components/HeadVue'
+	import footvue from '../components/FootVue'
 
 	export default {
 		name : 'home-vue',
@@ -57,11 +65,13 @@
 					{title : '本周<br>流行菜谱', participant : '', tag : '', remark : '', url : '', img : 'http://shop.jhui21.com/assets/images/a1.jpg'},
 					{title : '你的好友<br>在分享美食', participant : '', tag : '', remark : '', url : '', img : 'http://shop.jhui21.com/assets/images/a2.jpg'}
 				],
+
 				swiper : [
 					{title : '爸爸的味道', tag : '菜谱合集', url : '', img : 'http://shop.jhui21.com/assets/images/b1.jpg'},
 					{title : '美食作家王刚：<br>400万粉丝厨艺红人的成长之路', tag : '厨房故事', url : '', img : 'http://shop.jhui21.com/assets/images/b2.jpg'},
 					{title : '爸爸的味道', tag : '菜谱合集', url : '', img : 'http://shop.jhui21.com/assets/images/b1.jpg'}
 				],
+
 				meals : [
 					{
 						img : ['http://shop.jhui21.com/assets/images/d1-1.png', 'http://shop.jhui21.com/assets/images/d1-2.png'],
@@ -79,6 +89,33 @@
 						works : 5425
 					}
 				],
+				top : {
+					left : {
+						type : 'icon',
+						url : {name : 'share'},
+						content : 'iconfont icon-plus-add'
+					},
+					main : {
+						type : 'placeholder',   // text, placeholder, input
+						l : {
+							url : '',
+							content : 'iconfont icon-fangdajing'
+						},
+						m : {
+							url : '',
+							content : '搜索菜谱、食材'
+						},
+						r : {
+							url : '',
+							content : 'iconfont icon-maikefeng'
+						}
+					},
+					right : {
+						type : 'icon',
+						url : {},
+						content : "iconfont icon-iconset0316"
+					}
+				},
 				series : {
 					title : '厨studio课堂',
 					url : '',
@@ -122,13 +159,28 @@
 	      	imgListsComponent,
 	      	Swiper,
 	      	parallaxComponent,
-	      	seriesComponent
+	      	seriesComponent,
+	      	headvue,
+	      	footvue
 	    }
 	}
 </script>
 
 <style lang="scss" scoped>
-	#content{ width: 100%; height: 100%; overflow: hidden; position: relative; }
+	#main{ 
+		/* width: 100%; height: 100%; overflow: hidden; */ position: relative; 
+
+		.more{
+			padding-top: 30px;
+			padding-bottom: 20px;
+			text-align: center;
+			span.moreTips{
+				font-size: .7rem; 
+				line-height: 1.2rem;
+				color: #aaa;
+			}
+		}
+	}
 	#join{ 
 		margin: 24px 16px 0; padding: 12px; background: #f2e0ba; border-radius: 5px; 
 

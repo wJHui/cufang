@@ -19,8 +19,7 @@
 		methods : {},
 		mounted (){
 			let load 	= this.$refs.load,
-				doc 	= document.documentElement,
-				main 	= document.querySelector('#main'),
+				main 	= this.$refs.load.parentNode,
 				_slef 	= this;
 			
 				var tl = new TimelineMax();
@@ -41,10 +40,9 @@
 					return false;
 				}
 
-				let wrapTop 	= doc.scrollTop;								// 获取滚动条高度
+				let wrapTop 	= document.documentElement.scrollTop || document.body.scrollTop;		// 获取滚动条高度
 				let touchStep 	= e.targetTouches[0].clientY - _slef.initY;		// 整数为下拉，负数为上拉
 				let curVlue 	= load.style.transform;
-
 				if(_slef.scrollState == 0 && wrapTop === 0 && touchStep > 0) _slef.scrollState = 1
 				
 
@@ -56,9 +54,9 @@
 					let newVlue = parseInt(curVlue) + parseInt(touchStep);
 					
 					switch(true){
-						case newVlue >= 100 :
-							tl.to(load, 0, {y : 100, ease : Linear.easeOut});
-							newVlue = 100;
+						case newVlue >= 120 :
+							tl.to(load, 0, {y : 120, ease : Linear.easeOut});
+							newVlue = 120;
 						break;
 						case newVlue <= 0 :
 							tl.to(load, 0, {y : 0, ease : Linear.easeOut});
@@ -89,7 +87,7 @@
 
 				if(_slef.scrollState == 2){
 					_slef.scrollState = 3;
-					tl.to(load, .3, {y : 50, ease : Linear.easeOut});
+					tl.to(load, .3, {y : 80, ease : Linear.easeOut});
 					
 					//  触发 refresh
 					setTimeout(function (){
@@ -124,7 +122,7 @@
 
 	
 	#load{ 
-		transform: matrix(1,0,0,1,0,0); position: absolute; top: -50px; left: 0; width: 100%; 
+		transform: matrix(1,0,0,1,0,0); position: absolute; top: -50px; left: 0; width: 100%;  z-index: 100;
 
 		.loadWrap{ 
 			display: inline-block; 

@@ -3,8 +3,7 @@ import Router from 'vue-router'
 
 import HomeVue from '../views/HomeVue'
 import PageVue from '../views/PageVue'
-import HeadVue from '../views/HeadVue'
-import FootVue from '../views/FootVue'
+import ShareVue from '../views/ShareVue'
 
 Vue.use(Router)
 
@@ -20,11 +19,13 @@ export default new Router({
     	children : [
     		{
     			path : 'home',
-    			components : {
-                    default : HomeVue,
-                    header : HeadVue,
-                    footer : FootVue,
-                }
+    			name : 'home',
+    			component : HomeVue
+    		},
+    		{
+    			path : 'share',
+    			name : 'share',
+    			component : ShareVue
     		},
             {
                 path : '',
@@ -32,5 +33,12 @@ export default new Router({
             }
     	]
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+      if (savedPosition) {
+         return savedPosition
+      } else {
+        return { x: 0, y: 0 }
+      }
+    }
 })

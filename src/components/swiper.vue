@@ -42,12 +42,11 @@
 				on:{
 				    slideNextTransitionStart: function(){
 				      	let _index = this.activeIndex
-				      	_slef.$refs.bar.style.width = 100 / _slef.data_num * (_index + 1) + '%'
+				      	if(!!_slef.$refs.bar) _slef.$refs.bar.style.width = 100 / _slef.data_num * (_index + 1) + '%'
 				    },
 				    slidePrevTransitionStart: function(){
 				      	let _index = this.activeIndex
-
-				      	_slef.$refs.bar.style.width = 100 / _slef.data_num * (_index + 1) + '%'
+						if(!!_slef.$refs.bar) _slef.$refs.bar.style.width = 100 / _slef.data_num * (_index + 1) + '%'
 				    }
 				},
 				resistanceRatio : 0,

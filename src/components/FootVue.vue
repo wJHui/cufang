@@ -1,16 +1,15 @@
 <template>
-	<div class="flex">
+	<div class="flex" id="footer">
 		<div v-for="(list, index) in footerNav" :class="{footerTable : true, cur : index == 0}" >
 			<i :class="list.icon"></i>
 			<p>{{list.title}}</p>
 		</div>
-		
 	</div>
 </template>
 
 <script>
 	export default {
-		name : 'FootVue',
+		name : 'foot-vue',
 		data (){
 			return {
 				footerNav : [
@@ -25,6 +24,7 @@
 	}
 </script>
 <style lang="scss" scoped>
+	#footer{ height: 50px; width: 100%; padding: 5px 0; background: #fff; position: relative; z-index: 20; position: fixed; left: 0; z-index: 200; bottom: 0; border-top: 1px solid #f6f6f6; }
 	.footerTable{
 		flex: 1;
 		align-self: auto;
