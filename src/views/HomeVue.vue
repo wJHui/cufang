@@ -5,8 +5,10 @@
 			<loadComponent @refresh="onRefresh" ref='load' :isupdate="isupdate"></loadComponent>
 			<section id="nav" class="flex">
 				<div v-for="(list, index) in navData" class="navItem" :key="index">
-					<img :src="list.icon">
-					<p>{{list.title}}</p>
+					<router-link :to="list.url">
+						<img :src="list.icon">
+						<p>{{list.title}}</p>
+					</router-link>
 				</div>
 			</section>
 			<section class="clear" style="margin:0 0 16px 0;">
@@ -56,8 +58,8 @@
 				isupdate : false,
 				navData : [
 					{title : '厨房好物', icon : 'http://shop.jhui21.com/assets/images/c1.jpg', url : ''},
-					{title : '发现新菜', icon : 'http://shop.jhui21.com/assets/images/c2.jpg', url : ''},
-					{title : '排行榜', icon : 'http://shop.jhui21.com/assets/images/c3.jpg', url : ''},
+					{title : '发现新菜', icon : 'http://shop.jhui21.com/assets/images/c2.jpg', url : {name : "find"}},
+					{title : '排行榜', icon : 'http://shop.jhui21.com/assets/images/c3.jpg', url : {name : 'rankings'}},
 					{title : '菜谱分类', icon : 'http://shop.jhui21.com/assets/images/c4.jpg', url : ''},
 				],
 

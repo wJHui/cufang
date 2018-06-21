@@ -16,7 +16,7 @@
 	@import 'animate.css';
 	
 	a,button,input{-webkit-tap-highlight-color:rgba(255,0,0,0);}
-	#main{ position: relative; margin: 50px 0; background: #fff; }
+	#main{ position: relative; padding: 50px 0; background: #fff; }
 	.iconfont{ vertical-align: middle; display: inline-block; margin-top: -2px; font-size: 1.4rem; color: #595a55; }
 
 

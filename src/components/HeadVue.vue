@@ -4,8 +4,8 @@
       <router-link  v-if="!!data.left.type" :to="data.left.url"><i :class="data.left.content"></i></router-link>
     </div>
 
-    <div class="topMain top" v-if="data.main.type === 'text'">
-       {{data.main.m.content}}
+    <div class="topMain top" v-if="data.main.type === 'text'" style="font-size:1.1rem;color: #383835; font-weight: 500;">
+       {{data.main.content}}
     </div>
      <div class="topMain top" v-else-if="data.main.type === 'placeholder'">
       <div>
@@ -52,7 +52,11 @@
   .top{
     height: 36px; text-align: center; line-height: 36px; 
 
-    &Left{ flex: 2;}
+    &Left{
+      flex: 2;
+
+      i.iconfont{ font-size: 1.3rem !important; }
+    }
     &Main{ flex: 8; margin: 0 6px; 
 
       > div{

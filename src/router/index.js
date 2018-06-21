@@ -4,6 +4,8 @@ import Router from 'vue-router'
 import HomeVue from '../views/HomeVue'
 import PageVue from '../views/PageVue'
 import ShareVue from '../views/ShareVue'
+import FindVue from '../views/FindVue'
+import Rankings from '../views/RankingsVue'
 
 Vue.use(Router)
 
@@ -27,10 +29,20 @@ export default new Router({
     			name : 'share',
     			component : ShareVue
     		},
-            {
-                path : '',
-                redirect : '/page/home'
-            }
+        {
+          path : 'find',
+          name : 'find',
+          component : FindVue
+        },
+        {
+          path : 'rankings',
+          name : 'rankings',
+          component : Rankings
+        },
+        {
+          path : '',
+          redirect : '/page/home'
+        }
     	]
     }
   ],
