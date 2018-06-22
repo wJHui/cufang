@@ -2,24 +2,22 @@
 	<div class="imgItem pull-left" :style="{marginLeft : isfirst > 0 ? (isfirst == 1 ? '8px' : '16px') : '0px', width : width}">
 		<div class="imgShow">
 			<img :src="data.img">
-			<imgText :data="data"></imgText>
+			<div class="imgRemark">
+				<span v-if="!!data.tag.length" class="imgTag">{{data.tag}}</span>
+				<h5 v-html="data.title"></h5>
+			</div>
 		</div>
 		<div class="imgTitle" v-if="!!data.remark.length">
 			<h4>{{data.remark}}</h4>
-			<span v-if="!!data.participant.length">{{data.participant}}人参加</span>
+			<span>{{data.participant}}人参加</span>
 		</div>
 	</div>
 </template>
 <script>
-	import imgText from './imgText'
 	export default {
 		name : 'img-lists',
 		data (){
-			return {
-				d : {
-					title : ''
-				}
-			}
+			return {}
 		},
 		computed : {
 			width (){
@@ -33,9 +31,6 @@
 		},
 		mothods : {
 
-		},
-		components : {
-			imgText
 		}
 	}
 </script>
@@ -44,7 +39,7 @@
 	.imgItem{
 		.imgShow{ 
 			position: relative;
-			font-size: 16px;
+
 			.imgRemark{ 
 				position: absolute; width: 100%; padding: 10px; left: 0; bottom: 0;
 

@@ -5,7 +5,8 @@ import HomeVue from '../views/HomeVue'
 import PageVue from '../views/PageVue'
 import ShareVue from '../views/ShareVue'
 import FindVue from '../views/FindVue'
-import Rankings from '../views/RankingsVue'
+import RankingsVue from '../views/RankingsVue'
+import ClassVue from '../views/ClassVue'
 
 Vue.use(Router)
 
@@ -37,7 +38,12 @@ export default new Router({
         {
           path : 'rankings',
           name : 'rankings',
-          component : Rankings
+          component : RankingsVue
+        },
+        {
+          path : 'class',
+          name : 'class',
+          component : ClassVue
         },
         {
           path : '',

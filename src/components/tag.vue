@@ -1,50 +1,54 @@
 <template>
-	<span :class="newClass">{{text}}</span>
+	<span class="tag-com" :class="c" :style="s" ><slot></slot></span>
 </template>
 <script>
 	export default {
 		name : 'tag',
 		data (){
 			return {
-
+				background : 'transparent'
 			}
 		},
 		props : {
 			c : Object,
 			s : Object,
-			text : {
-				type : String,
-				require : true
-			}
-			
-		},
-		computed : {
-			newClass (){
-				let c = {'tag-com' : true}
-				let nClass = this.c || {}
-
-				return Object.assign(c, nClass)
+			gradient : {
+				default : false,
+				type : Boolean
 			}
 		},
+		computed : {}
 	}
 </script>
 <style lang="scss" scoped>
 	$background : #f2cb30;
 
 	.tag-com{
-		background: $background;
-		color: #fff;
-		line-height: 22px; 
+		background: #fff;
+		color: #333;
+		line-height: 20px; 
 		padding: 0 8px; 
 		display: inline-block;
-		font-size: .8rem;
+		font-size: .8em;
+
+		&.yellow{
+			background: $background;
+			color: #fff;
+		}
+
+		&.radius{
+			border-radius: 22px;
+
+			&-small{
+				border-radius: 3px;
+			}
+			
+		}
 
 		&.tag-block{
 			display: block;
 		}
 
-		&.radius{
-			border-radius: 22px;
-		}
+		
 	}
 </style>

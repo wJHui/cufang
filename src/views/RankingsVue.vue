@@ -18,6 +18,8 @@
 			</div>
 
 			<seriesComponent :data="series" :num=1></seriesComponent>
+
+			<listComponent v-for="(l, index) in list" :data="l" :key='index'></listComponent>
 		</div>
 	</div>
 </template>
@@ -26,6 +28,7 @@
 	import loadComponent from '../components/Load'
 	import ImgComponent from '../components/Img'
 	import seriesComponent from '../components/series'
+	import listComponent from '../components/lists'
 
 	export default {
 		name : 'rankings',
@@ -57,17 +60,33 @@
 					{title : '发现新菜', remark : '', img : 'http://shop.jhui21.com/assets/images/z3.jpg', tag : ''},
 				],
 				series : {
-					title : '厨studio课堂',
+					title : '流行菜单',
 					url : '',
 					list : [
-						{title : 'P妞', participant : '', tag : '', remark : '', url : '', img : 'http://shop.jhui21.com/assets/images/s1.jpg'},
-						{title : '一贫', participant : '', tag : '', remark : '', url : '', img : 'http://shop.jhui21.com/assets/images/s2.jpg'},
-						{title : 'P妞', participant : '', tag : '', remark : '', url : '', img : 'http://shop.jhui21.com/assets/images/s3.jpg'},
-						{title : 'Freeze静', participant : '', tag : '', remark : '', url : '', img : 'http://shop.jhui21.com/assets/images/s4.jpg'},
-						{title : 'AIKO日式料理教室', participant : '', tag : '', remark : '', url : '', img : 'http://shop.jhui21.com/assets/images/s5.jpg'},
-						{title : 'P妞', participant : '', tag : '', remark : '', url : '', img : 'http://shop.jhui21.com/assets/images/s6.jpg'},
+						{title : '蛋家.正餐', participant : '', tag : '', remark : '', url : '', img : 'http://shop.jhui21.com/assets/images/s1.jpg'},
+						{title : '多用烤箱', participant : '', tag : '', remark : '', url : '', img : 'http://shop.jhui21.com/assets/images/s2.jpg'},
+						{title : '像女王一样吃早餐', participant : '', tag : '', remark : '', url : '', img : 'http://shop.jhui21.com/assets/images/s3.jpg'},
+						{title : '各种好有兴趣想做的东西 --吐司篇', participant : '', tag : '', remark : '', url : '', img : 'http://shop.jhui21.com/assets/images/s4.jpg'},
+						{title : '就是面肚子', participant : '', tag : '', remark : '', url : '', img : 'http://shop.jhui21.com/assets/images/s5.jpg'},
+						{title : '蛋家.正餐', participant : '', tag : '', remark : '', url : '', img : 'http://shop.jhui21.com/assets/images/s6.jpg'},
 					]
-				}
+				},
+				list : [
+					{
+						title : '市集排行榜',
+						list : [
+							{ title : '市集爆款', remark : '最近30天销量最高', img : 'http://shop.jhui21.com/assets/images/a1.jpg', url : ''},
+							{ title : '市集上新', remark : '最新上架商品', img : 'http://shop.jhui21.com/assets/images/a2.jpg', url : ''},
+						]
+					},
+					{
+						title : '用户排行榜',
+						list : [
+							{ title : '市集爆款', remark : '最近30天销量最高', img : 'http://shop.jhui21.com/assets/images/a1.jpg', url : ''},
+							{ title : '市集上新', remark : '最新上架商品', img : 'http://shop.jhui21.com/assets/images/a2.jpg', url : ''},
+						]
+					}
+				]
 			}
 		},
 		methods : {
@@ -79,7 +98,8 @@
 			headvue,
 			loadComponent,
 			ImgComponent,
-			seriesComponent
+			seriesComponent,
+			listComponent
 		}
 	}
 </script>

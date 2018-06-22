@@ -60,7 +60,7 @@
 					{title : '厨房好物', icon : 'http://shop.jhui21.com/assets/images/c1.jpg', url : ''},
 					{title : '发现新菜', icon : 'http://shop.jhui21.com/assets/images/c2.jpg', url : {name : "find"}},
 					{title : '排行榜', icon : 'http://shop.jhui21.com/assets/images/c3.jpg', url : {name : 'rankings'}},
-					{title : '菜谱分类', icon : 'http://shop.jhui21.com/assets/images/c4.jpg', url : ''},
+					{title : '菜谱分类', icon : 'http://shop.jhui21.com/assets/images/c4.jpg', url : {name : 'class'}},
 				],
 
 				imglists1 : [
