@@ -12,7 +12,7 @@
 				</div>
 			</section>
 			<section class="clear" style="margin:0 0 16px 0;">
-				<imgListsComponent v-for="(list, index) in imglists1" :key="index" :data="list" :shownum=2 :isfirst='index === 0'></imgListsComponent>
+				<imgListsComponent v-for="(list, index) in imglists1" :key="index" :data="list" :shownum=2 :isfirst="index ? 1 : 2"></imgListsComponent>
 			</section>
 
 			<Swiper :data="swiper"></Swiper>
@@ -124,10 +124,10 @@
 					list : [
 						{title : 'P妞', participant : '2001', tag : '讲师', remark : '限时特价 | 地道台湾芋圆(细腻抹茶冰冻饮料)', url : '', img : 'http://shop.jhui21.com/assets/images/g1.jpg'},
 						{title : '一贫', participant : '2001', tag : '讲师', remark : '限时特价 | 地道台湾芋圆(细腻抹茶冰冻饮料)', url : '', img : 'http://shop.jhui21.com/assets/images/g2.jpg'},
-						{title : 'P妞', participant : '2001', tag : '讲师', remark : '限时特价 | 口口爆汁的超人气生煎', url : '', img : 'http://shop.jhui21.com/assets/images/g3.jpg'},
+						{title : 'P妞', participant : '2001', tag : '讲师', remark : '限时特价 | 口口爆汁的超人气生煎', url : '', img : 'http://shop.jhui21.com/assets/images/g6.jpg'},
 						{title : 'Freeze静', participant : '2001', tag : '讲师', remark : '限时特价 | 4种搭配网红超厚沼三明治', url : '', img : 'http://shop.jhui21.com/assets/images/g4.jpg'},
 						{title : 'AIKO日式料理教室', participant : '2001', tag : '讲师', remark : '限时特价 | 地道台湾芋圆(细腻抹茶冰冻饮料)', url : '', img : 'http://shop.jhui21.com/assets/images/g5.jpg'},
-						{title : 'P妞', participant : '2001', tag : '讲师', remark : '限时特价 | 地道台湾芋圆(细腻抹茶冰冻饮料)', url : '', img : 'http://shop.jhui21.com/assets/images/g6.jpg'},
+						{title : 'P妞', participant : '2001', tag : '讲师', remark : '限时特价 | 地道台湾芋圆(细腻抹茶冰冻饮料)', url : '', img : 'http://shop.jhui21.com/assets/images/g3.jpg'},
 					]
 				}
 			}

@@ -2,12 +2,12 @@
 	<section class="series-wrap">
 		<div class="clear series-title">
 			<h3 class="pull-left">{{data.title}}</h3>
-			<span class="pull-right">查看全部</span>
+			<span v-if="data.url.length" class="pull-right"><router-link :to="data.url">查看全部</router-link></span>
 		</div>
 		<div class="series-swiper" ref="series">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide" v-for="(list, index) in data.list">
-					<imgListsComponent :data="list" :isfirst=false :shownum="num"></imgListsComponent>
+					<imgListsComponent :data="list" :isfirst=1 :shownum="num"></imgListsComponent>
 				</div>
 			</div>
 		</div>
@@ -47,7 +47,7 @@
 				    }
 				},
 				freeMode : true,
-				slidesPerView : 2,
+				slidesPerView : this.num,
 				resistanceRatio : 0,
 				freeModeMomentumBounceRatio : 0
 				
@@ -69,12 +69,13 @@
 		}
 
 		.series-swiper{ 
-			width: 100%; 
+			width: 100vw; 
 			padding: 0 16px 0 8px;
 			overflow: hidden;
 
 			.swiper-wrapper{
 				/*margin-left: -8px;*/
+				width: 999999px;
 
 				div.swiper-slide{
 					margin-right: 0 !important;

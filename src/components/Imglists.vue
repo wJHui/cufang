@@ -1,5 +1,5 @@
 <template>
-	<div class="imgItem pull-left" :style="{marginLeft : isfirst ? '16px' : '8px', width : width}">
+	<div class="imgItem pull-left" :style="{marginLeft : isfirst > 0 ? (isfirst == 1 ? '8px' : '16px') : '0px', width : width}">
 		<div class="imgShow">
 			<img :src="data.img">
 			<div class="imgRemark">
@@ -21,12 +21,12 @@
 		},
 		computed : {
 			width (){
-				return 'calc((100vw  - 16px)/'+ this.shownum +' - 12px) !important';
+				return 'calc((100vw  - 16px)/'+ this.shownum +' - '+ (8 * (this.shownum + 1)) / this.shownum +'px) !important';
 			}
 		},
 		props : {
 			shownum : Number,
-			isfirst : Boolean,
+			isfirst : Number,
 			data : Object
 		},
 		mothods : {
