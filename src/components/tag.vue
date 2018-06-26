@@ -6,16 +6,11 @@
 		name : 'tag',
 		data (){
 			return {
-				background : 'transparent'
 			}
 		},
 		props : {
-			c : Object,
-			s : Object,
-			gradient : {
-				default : false,
-				type : Boolean
-			}
+			c : [Object, Array],
+			s : Object
 		},
 		computed : {}
 	}

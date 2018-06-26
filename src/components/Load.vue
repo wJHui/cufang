@@ -6,7 +6,7 @@
 	</div>
 </template>
 <script>
-	import {common} from '../common/common'
+	import {util} from '../util'
 	import {TweenMax} from "gsap/TweenMax"
 	export default {
 		name : 'load-component',
@@ -49,7 +49,7 @@
 				// 用户正在拉动刷新动画
 				if(_slef.scrollState == 1 || _slef.scrollState == 2){
 					e.preventDefault();
-					curVlue = common.matrix(curVlue, 'translate')['y'] || 0;
+					curVlue = util.matrix(curVlue, 'translate')['y'] || 0;
 
 					let newVlue = parseInt(curVlue) + parseInt(touchStep);
 					
@@ -122,7 +122,12 @@
 
 	
 	#load{ 
-		transform: matrix(1,0,0,1,0,0); position: absolute; top: -50px; left: 0; width: 100%;  z-index: 100;
+		transform: matrix(1,0,0,1,0,0); 
+		position: absolute; 
+		top: 0px; 
+		left: 0; 
+		width: 100%;  
+		z-index: 100;
 
 		.loadWrap{ 
 			display: inline-block; 

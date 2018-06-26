@@ -1,4 +1,4 @@
-let common = {
+let util = {
 	matrix (str, type){
 		if(!str) return false;
 		let reg = /(.+)\(\s*([0-9\.]+),\s*([0-9\.]+),\s*([0-9\.]+),\s*([0-9\.]+),\s*([0-9\.]+),\s*([0-9\.]+)\s*\)/ig;
@@ -13,9 +13,11 @@ let common = {
 		}
 		return result;
 	},
+
 	str_number (str){
 		return parseInt(str)
-	}
+	},
+	
 }
 
-export { common }
+export { util }

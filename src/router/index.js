@@ -7,6 +7,7 @@ import ShareVue from '../views/ShareVue'
 import FindVue from '../views/FindVue'
 import RankingsVue from '../views/RankingsVue'
 import ClassVue from '../views/ClassVue'
+import CourseVue from '../views/CourseVue'
 
 Vue.use(Router)
 
@@ -44,6 +45,12 @@ export default new Router({
           path : 'class',
           name : 'class',
           component : ClassVue
+        },
+        {
+          path : 'course/:id',
+          name : 'course',
+          component : CourseVue,
+          props : true
         },
         {
           path : '',

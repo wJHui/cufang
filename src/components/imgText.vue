@@ -2,7 +2,7 @@
 	<div class="imgText" :class="c" :style="s">
 		<tagComponent v-if="!!data.tag" :c="{'radius-small' : true}" :s="{'margin-bottom' : '5px'}">{{data.tag}}</tagComponent>
 		<h5 v-html="data.title" v-if="!!data.title"></h5>
-		<p v-if="!!data.explain" class="explain">{{data.export}}</p>
+		<p v-if="!!data.explain" class="explain">{{data.explain}}</p>
 	</div>
 </template>
 
@@ -24,6 +24,12 @@
 			overflow: hidden; 
 		}
 
+		p.explain{
+			color: #fff;
+			font-size: .9em;
+			line-height: 18px;
+		}
+
 		&.noPadding{
 			padding: 0;
 		}
@@ -32,12 +38,7 @@
 			text-align: center;
 		}
 
-		p.export{
-			font-size: .9rem;
-			color: #fff;
-			line-height: 18px;
-		}
-
+		
 		&.it-flex{
 			height: 100%;
 			display: flex;
@@ -54,8 +55,7 @@
 <script>
 	import tagComponent from './tag'
 	let path = require('path')
-	let rgbaster = require(path.reslove(__dirname) + '/assets/rgbaster.min');
-
+	
 	export default {
 		name : 'img-text',
 		data (){
@@ -65,24 +65,13 @@
 			data : Object,
 			c : [Object, Array],
 			s : [Object, Array],
-			img : String
+			
 		},
 		components : {
 			tagComponent
 		},
 		mounted (){
-			console.log(rgbaster.colors)
-			if(!!this.img){
-				/*rgbaster.colors(this.img, {
-					exclude: [ 'rgb(255,255,255)' ],
-					success: function(payload) {
-				    	// You now have the payload.
-				    	console.log(payload.dominant);
-				    	console.log(payload.secondary);
-				    	console.log(payload.palette);
-				  	}
-				});*/
-			}
+			
 		}
 	}
 </script>

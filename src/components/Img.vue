@@ -1,16 +1,22 @@
 <template>
 	<div :class="newClass">
-		<img :src="data.img">
-		<div class="images-tag" v-if="data.tag.length"><tagComponent :text="data.tag" :c='{radius : true}'></tagComponent></div>
-		<div class="images-wrap">
+		<imagesComponent w="640" h="380" :src="data.img"></imagesComponent>
+		<div class="images-tag" v-if="data.tag">
+			<tagComponent :text="data.tag" :c='["radius"]'></tagComponent>
+		</div>
+		<!-- <div class="images-wrap">
 			<h4>{{data.title}}</h4>
 			<p>{{data.remark}}</p>
-		</div>
+		</div> -->
+		<imgText :data="data"></imgText>
 	</div>
 </template>
 
 <script>
 	import tagComponent from '../components/tag'
+	import imgText from '../components/imgText'
+	import imagesComponent from '../components/Images'
+	
 	export default {
 		name : 'img-com',
 		data (){
@@ -30,7 +36,9 @@
 			}
 		},
 		components : {
-			tagComponent
+			tagComponent,
+			imgText,
+			imagesComponent
 		},
 		props : {
 			data : {

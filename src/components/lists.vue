@@ -8,7 +8,7 @@
 					<p>{{list.remark}}</p>
 				</div>
 				<div class="pull-right lists-right">
-					<img :src="list.img">
+					<imagesComponent w="100" h="100" :src="list.img"></imagesComponent>
 				</div>
 			</div>
 		</div>
@@ -16,6 +16,7 @@
 </template>
 
 <script>
+	import imagesComponent from '../components/Images'
 	export default {
 		name : 'lists-component',
 		data (){
@@ -28,6 +29,9 @@
 				type : Object,
 				require : true
 			}
+		},
+		components : {
+			imagesComponent
 		}
 	}
 </script>

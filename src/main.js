@@ -5,6 +5,9 @@ import App from './App'
 import router from './router'
 import store from './store'
 
+import axios from 'axios'
+
+Vue.prototype.$ajax = axios
 
 new Vue({
   el: '#app',

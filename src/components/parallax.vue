@@ -34,7 +34,7 @@
 			let _slef = this
 			new Swiper(this.$refs.swiper, {
 				on:{
-				    slideNextTransitionStart: function(){
+				  /*  slideNextTransitionStart: function(){
 				      	let _index = this.activeIndex
 				      	//_slef.$refs.bar.style.width = 100 / _slef.data_num * (_index + 1) + '%'
 				    },
@@ -42,7 +42,7 @@
 				      	let _index = this.activeIndex
 
 				      	//_slef.$refs.bar.style.width = 100 / _slef.data_num * (_index + 1) + '%'
-				    }
+				    }*/
 				},
 				resistanceRatio : 0,
 				parallax : true,
@@ -58,47 +58,100 @@
 <style lang="scss" socped>
 	@import 'swiper/dist/css/swiper.css';
 	.parallax{ 
-		padding: 0 16px; position: relative; background: url('http://shop.jhui21.com/assets/images/dot.png') no-repeat 0 0; background-size: auto 100%;
+		padding: 0 16px; 
+		position: relative; 
+		background: url('http://shop.jhui21.com/assets/images/dot.png') no-repeat 0 0; 
+		background-size: auto 100%;
+
 		.parallax-swiper{
-			 position: relative; overflow: hidden;
+			 position: relative; 
+			 overflow: hidden;
 
 			.swiper-wrapper{
 				width: 1000%;
 
 				.swiper-slide{
-					width: 10%; float: left; position: relative; overflow: hidden;
+					width: 10%; 
+					float: left; 
+					position: relative; 
+					overflow: hidden;
 
 					.swiper-img{
-						width: 100%; position: absolute; top: 0; left: 0;
+						width: 100%; 
+						position: absolute; 
+						top: 0; 
+						left: 0;
 
-						&:nth-of-type(1){ position: relative; }				
+						&:nth-of-type(1){ 
+							position: relative; 
+						}				
 					}
 					.swiper-text{ 
-						width: 100%; height: 100%; display: flex; padding-top: 6px; align-items: center; position: absolute; top: 0; left: 0;
+						width: 100%; 
+						height: 100%; 
+						display: flex; 
+						padding-top: 6px; 
+						align-items: center; 
+						position: absolute; 
+						top: 0; 
+						left: 0;
 						flex-direction: column;
 
 						h4 {
-							font-size: 1.1rem; font-weight: 500; color: #333; margin-bottom: 2px; display: inline-block; position: relative;
+							font-size: 1.1rem; 
+							font-weight: 500; 
+							color: #333; 
+							margin-bottom: 2px; 
+							display: inline-block; 
+							position: relative;
 
-							&:after{ content: ''; display: block; width: 20px; height: 1px; position: absolute; top: 50%; left: -26px; background: #333; }
-							&:before{ content: ''; display: block; width: 20px; height: 1px; position: absolute; top: 50%; right: -26px; background: #333; }
+							&:after{ 
+								content: ''; 
+								display: block; 
+								width: 20px; 
+								height: 1px; 
+								position: absolute; 
+								top: 50%; 
+								left: -26px; 
+								background: #333; 
+							}
+
+							&:before{ 
+								content: ''; 
+								display: block; 
+								width: 20px; 
+								height: 1px; 
+								position: absolute; 
+								top: 50%; 
+								right: -26px; 
+								background: #333; 
+							}
 						}
 
 						p {
-							font-size: .7rem; color: #ccc;
+							font-size: .7rem; 
+							color: #ccc;
 						}
 					}
-					img{ max-width: 100%; display: block; }
+					img{ 
+						max-width: 100%; 
+						display: block; 
+					}
 				}
 			}
 
 			.swiper-pagination-bullets{ 
-				bottom: 0px !important;  height:10px; line-height:10px;
+				bottom: 0px !important;  
+				height:10px; 
+				line-height:10px;
 
 				span{ 
-					width: 6px; height: 6px; 
+					width: 6px; 
+					height: 6px; 
 
-					&.swiper-pagination-bullet-active{ background: #666; }
+					&.swiper-pagination-bullet-active{ 
+						background: #666; 
+					}
 				}
 			}
 		}

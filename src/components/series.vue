@@ -7,7 +7,7 @@
 		<div class="series-swiper" ref="series">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide" v-for="(list, index) in data.list">
-					<imgListsComponent :data="list" :isfirst=1 :shownum="num"></imgListsComponent>
+					<imgListsComponent :w="w" :h="h" :textClass="textClass" :data="list" :c="itemClass" :isfirst=1 :shownum="num"></imgListsComponent>
 				</div>
 			</div>
 		</div>
@@ -28,6 +28,16 @@
 				require : true
 			},
 			num : Number,
+			itemClass : [Array, Object],
+			w : {
+				type : [String, Number],
+				default : 500
+			},
+			h : {
+				type : [String, Number],
+				default : 500
+			},
+			textClass : [Array, Object]
 		},
 		components : {
 			imgListsComponent
@@ -35,17 +45,14 @@
 		mounted (){
 			let _slef = this
 			new Swiper(this.$refs.series, {
-				on:{
+				/*on:{
 				    slideNextTransitionStart: function(){
 				      	let _index = this.activeIndex
-				      //	_slef.$refs.bar.style.width = 100 / _slef.data_num * (_index + 1) + '%'
 				    },
 				    slidePrevTransitionStart: function(){
 				      	let _index = this.activeIndex
-
-				      	//_slef.$refs.bar.style.width = 100 / _slef.data_num * (_index + 1) + '%'
-				    }
-				},
+					}
+				},*/
 				freeMode : true,
 				slidesPerView : this.num,
 				resistanceRatio : 0,
@@ -64,8 +71,17 @@
 		.series-title{ 
 			margin: 0 16px 16px; 
 
-			h3{ font-size: 1.1rem; font-weight: 500; color: #333; line-height: 1.6rem; }
-			span{ font-size: 1rem; line-height: 1.6rem; color: #ccc; }
+			h3{ 
+				font-size: 1.1rem; 
+				font-weight: 500; 
+				color: #333; 
+				line-height: 1.6rem; 
+			}
+			span{ 
+				font-size: 1rem; 
+				line-height: 1.6rem; 
+				color: #ccc; 
+			}
 		}
 
 		.series-swiper{ 
@@ -74,7 +90,6 @@
 			overflow: hidden;
 
 			.swiper-wrapper{
-				/*margin-left: -8px;*/
 				width: 999999px;
 
 				div.swiper-slide{

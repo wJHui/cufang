@@ -4,7 +4,7 @@
 		<div id="main">
 			<loadComponent @refresh="onRefresh" ref='load' :isupdate="isupdate"></loadComponent>
 			<div class="production">
-				<productionComponent :data="findData"></productionComponent>
+				<productionComponent w="450" h="300" :data="findData"></productionComponent>
 			</div>
 		</div>
 	</div>
@@ -37,12 +37,12 @@
 					}
 				},
 				findData : [
-					{title : '造型馒头之包菜馒头', tag : '独家', type : 'img', head : 'http://shop.jhui21.com/assets/images/h1.jpg', img : 'http://shop.jhui21.com/assets/images/f1.jpg', author : '琦|墨'},
-					{title : '腌菜花炒毛豆', tag : '独家', type : 'img', head : 'http://shop.jhui21.com/assets/images/h2.jpg', img : 'http://shop.jhui21.com/assets/images/f2.jpg', author : '飘零星'},
-					{title : '时菜烤鸡腿', tag : '独家', type : 'img', head : 'http://shop.jhui21.com/assets/images/h1.jpg', img : 'http://shop.jhui21.com/assets/images/f3.jpg', author : '琦|墨'},
-					{title : '西瓜帽子饼', tag : '独家', type : 'img', head : 'http://shop.jhui21.com/assets/images/h2.jpg', img : 'http://shop.jhui21.com/assets/images/f4.jpg', author : '琦|墨'},
-					{title : '在家也能痛快撸串，简单又健康在家也能痛快撸串，简单又健康', tag : '独家', type : 'img', head : 'http://shop.jhui21.com/assets/images/h1.jpg', img : 'http://shop.jhui21.com/assets/images/f5.jpg', author : '美食台foodvideo'},
-					{title : '造型馒头之包菜馒头', tag : '', type : 'video', head : 'http://shop.jhui21.com/assets/images/h2.jpg', img : 'http://shop.jhui21.com/assets/images/f6.jpg', author : '琦|墨'},
+					{title : '造型馒头之包菜馒头', url : {name : 'course', params : {id : 1}}, tag : '独家', type : 'img', head : 'http://shop.jhui21.com/assets/images/h1.jpg', img : 'http://shop.jhui21.com/assets/images/f1.jpg', author : '琦|墨'},
+					{title : '腌菜花炒毛豆', tag : '独家', url : {name : 'course', params : {id : 1}}, type : 'img', head : 'http://shop.jhui21.com/assets/images/h2.jpg', img : 'http://shop.jhui21.com/assets/images/f2.jpg', author : '飘零星'},
+					{title : '时菜烤鸡腿', tag : '独家', url : {name : 'course', params : {id : 1}}, type : 'img', head : 'http://shop.jhui21.com/assets/images/h1.jpg', img : 'http://shop.jhui21.com/assets/images/f3.jpg', author : '琦|墨'},
+					{title : '西瓜帽子饼', tag : '独家', url : {name : 'course', params : {id : 1}}, type : 'img', head : 'http://shop.jhui21.com/assets/images/h2.jpg', img : 'http://shop.jhui21.com/assets/images/f4.jpg', author : '琦|墨'},
+					{title : '在家也能痛快撸串，简单又健康在家也能痛快撸串，简单又健康', url : {name : 'course', params : {id : 1}}, tag : '独家', type : 'img', head : 'http://shop.jhui21.com/assets/images/h1.jpg', img : 'http://shop.jhui21.com/assets/images/f5.jpg', author : '美食台foodvideo'},
+					{title : '造型馒头之包菜馒头', tag : '', url : {name : 'course', params : {id : 1}}, type : 'video', head : 'http://shop.jhui21.com/assets/images/h2.jpg', img : 'http://shop.jhui21.com/assets/images/f6.jpg', author : '琦|墨'},
 				]
 			}
 		},

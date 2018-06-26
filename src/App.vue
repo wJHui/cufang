@@ -12,13 +12,38 @@ export default {
 
 <style lang="scss">
 	@import './assets/fonts/iconfont.css';
-	$fontColor : #383835;
+	@font-face {
+	    font-family: 'jia';
+	    src: url('./assets/fonts/jia.eot'); 
+	    src: url('./assets/fonts/jia.eot?#iefix') format('embedded-opentype'),
+	    url('./assets/fonts/jia.ttf') format('truetype'),
+	    url('./assets/fonts/jia.svg#iconfont');
+	}
+
+	*{
+		box-sizing: border-box;
+		padding: 0;
+		margin: 0;
+		font-family: jia;
+	}
+
 	
-	.ell{ display: block;  overflow: hidden; white-space:nowrap;  text-overflow: ellipsis; }
-	*{ box-sizing: border-box; padding: 0; margin: 0; font-family: 'Microsoft Yahei'; }
+	.ell{
+		display: block;
+		overflow: hidden;
+		white-space:nowrap;
+		text-overflow: ellipsis;
+	}
+
 	
-	body{/* padding: 50px 0;*/ font-size: 14px;}
-	a{ text-decoration: none; color: $fontColor; }
+	body{
+		font-size: 14px;
+	}
+
+	a{
+		text-decoration: none;
+		color: #383835;
+	}
 
 	.clear{
 		&:after {
@@ -41,6 +66,9 @@ export default {
 	.text-{
 		&center{
 			text-align: center;
+		}
+		&right{
+			text-align: right;
 		}
 	}
 

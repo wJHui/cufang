@@ -9,8 +9,8 @@
 					<h3 class="class-title">{{list.title}}</h3>
 					<div class="class-list clear">
 						<div class="class-item" v-for="(l, i) in list.list" :key='i'>
-							<img :src="l.img">
-							<imgText :data="l" :s="{padding : '4px'}" :img="l.img" :c="['noPadding', 'textCenter']"></imgText>
+							<imagesComponent :w="100" :h="100" :src="l.img"></imagesComponent>
+							<imgText :data="l" :s="{padding : '4px'}" :c="['noPadding', 'textCenter']"></imgText>
 						</div>
 					</div>
 				</div>
@@ -27,9 +27,10 @@
 			margin-top: 12px;
 
 			h3.class-title{
-				font-size: .9rem; 
+				font-size: 1rem; 
 				margin-bottom: 16px;
 				color: #393631;
+				font-weight: 500;
 			}
 
 			.class-item{
@@ -59,6 +60,7 @@
 	import headvue from '../components/HeadVue'
 	import loadComponent from '../components/Load'
 	import imgText from '../components/imgText'
+	import imagesComponent from '../components/Images'
 
 	export default {
 		name : 'class-vue',
@@ -97,7 +99,7 @@
 						]
 					},
 					{
-						title : '热门分类',
+						title : '推荐分类',
 						list : [
 							{title : '家常菜', img : 'http://shop.jhui21.com/assets/images/a1.jpg', url : ''},
 							{title : '下饭菜', img : 'http://shop.jhui21.com/assets/images/a2.jpg', url : ''},
@@ -116,12 +118,16 @@
 		components : {
 			headvue,
 			loadComponent,
-			imgText
+			imgText,
+			imagesComponent
 		},
 		methods : {
 			onRefresh (){
 
 			}
+		},
+		mounted (){
+			
 		}
 	}
 </script>

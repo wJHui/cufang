@@ -24,15 +24,33 @@
 	}
 </script>
 <style lang="scss" scoped>
-	#footer{ height: 50px; width: 100%; padding: 5px 0; background: #fff; position: relative; z-index: 20; position: fixed; left: 0; z-index: 200; bottom: 0; border-top: 1px solid #f6f6f6; }
+	#footer{ 
+		height: 50px; 
+		width: 100%; 
+		padding: 5px 0; 
+		background: #fff; 
+		position: relative; 
+		z-index: 20; 
+		position: fixed; 
+		left: 0; 
+		z-index: 200; 
+		bottom: 0; 
+		border-top: 1px solid #f6f6f6; 
+	}
+
 	.footerTable{
 		flex: 1;
 		align-self: auto;
 		text-align: center;
 		color: #595a55;
 
-		i.iconfont{ font-size: 1.3rem; }
-		p{ font-size: .7rem; }
+		i.iconfont{ 
+			font-size: 1.3rem; 
+		}
+		p{ 
+			font-size: .7rem; 
+			margin-top: 2px;
+		}
 		&.cur{
 			color: #e55; 
 			i.iconfont{ color: #e55; }
